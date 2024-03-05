@@ -1,2 +1,1 @@
-# lab06-SW
-Laboratorio 6 Sistemas y Tecnologias Web
+# Laboratorio 6 - Server Side
