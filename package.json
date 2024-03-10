@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/main.js"
+    "start": "node src/main.js",
+    "lint": "eslint ."
   },
   "keywords": [],
   "author": "",
@@ -12,5 +13,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "mysql2": "^3.9.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb-base": "^15.0.0"
   }
 }
