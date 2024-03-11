@@ -7,7 +7,7 @@
 - Aprender a construir y probar endpoints RESt
 ---
 ## :gear: Repositorio de Github :gear:
-    [Lab06](https://github.com/G2309/lab06-SW.git)
+    [Lab06](https://github.com/G2309/lab06-SW)
 ---
 
 ## :computer: Pruebas en postman :computer:
