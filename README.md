@@ -6,7 +6,7 @@
 - Aprender a configurar una base de datos para ser consumida por un cliente
 - Aprender a construir y probar endpoints RESt
 ---
-## :git: Repositorio de Github :git:
+## :gear: Repositorio de Github :gear:
     [Lab06](https://github.com/G2309/lab06-SW.git)
 ---
 
