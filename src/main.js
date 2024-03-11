@@ -5,8 +5,13 @@
 const express = require('express')
 const pool = require('./conn.js')
 const fs = require('fs')
+const cors = require('cors')
+
 const app = express()
 const port = process.env.PORT || 3000
+
+// Middleware para permitir CORS
+app.use(cors())
 
 // Middleware para parsear el cuerpo de las solicitudes como JSON
 app.use(express.json())
