@@ -2,3 +2,24 @@
 2024-03-10T23:34:22.364Z - Método: GET, URL: /posts, Payload: {}
 2024-03-10T23:34:23.347Z - Método: GET, URL: /posts, Payload: {}
 2024-03-10T23:49:35.398Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T00:28:33.985Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T00:30:07.109Z - Método: POST, URL: /posts, Payload: {"title":"Demon 2","content":"Nahobino","demon":"Nahobino","level":10}
+2024-03-11T00:32:38.749Z - Método: PUT, URL: /posts/:postId, Payload: {"title":"Demon 2","content":"new demon for example","demon":"Nahobino","level":15}
+2024-03-11T00:32:57.492Z - Método: PUT, URL: /posts/:postId, Payload: {"title":"Demon 2","content":"Nahobino","demon":"A","level":15}
+2024-03-11T00:33:40.346Z - Método: PUT, URL: /posts/:2, Payload: {"title":"Demon 2","content":"Nahobino","demon":"A","level":15}
+2024-03-11T00:33:49.068Z - Método: PUT, URL: /posts/:1, Payload: {"title":"Demon 2","content":"Nahobino","demon":"A","level":15}
+2024-03-11T00:34:14.659Z - Método: PUT, URL: /posts/1, Payload: {"title":"Demon 2","content":"Nahobino","demon":"A","level":15}
+2024-03-11T00:35:00.314Z - Método: DELETE, URL: /posts/1, Payload: {}
+2024-03-11T00:35:14.348Z - Método: DELETE, URL: /posts/1, Payload: {"title":"Demon 2","content":"Nahobino","demon":"A","level":15}
+2024-03-11T00:35:14.572Z - Método: DELETE, URL: /posts/1, Payload: {"title":"Demon 2","content":"Nahobino","demon":"A","level":15}
+2024-03-11T00:35:19.511Z - Método: DELETE, URL: /posts/1, Payload: {}
+2024-03-11T00:36:02.637Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T00:48:24.007Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T00:48:25.019Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T01:34:01.330Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T01:59:01.249Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T01:59:02.145Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T02:11:43.112Z - Método: GET, URL: /posts, Payload: {}
+2024-03-11T02:13:13.292Z - Método: GET, URL: /api-docs, Payload: {}
+2024-03-11T02:13:13.349Z - Método: GET, URL: /favicon.ico, Payload: {}
+2024-03-11T02:24:17.685Z - Método: GET, URL: /posts, Payload: {}

@@ -7,9 +7,31 @@
 - Aprender a construir y probar endpoints RESt
 ---
 ## :gear: Repositorio de Github :gear:
-[Lab06](https://github.com/G2309/lab06-SW)
+Link de [Lab06](https://github.com/G2309/lab06-SW)
+---
+## :paperclip: Documentacion consultada :paperclip:
+Formato de README.md: [Click aqui](https://learnxinyminutes.com/docs/markdown/)
+Swagger: [Click aqui](https://www.youtube.com/watch?v=RayDPBYou4I&t=349s)
 ---
 
+## Comandos para ejecutar el servidor Express:
+
+**Importante, dependiendo de la configuracion de docker en tu computadora, sera necesario que utilices "sudo" antes de los siguientes comandos**
+
+Dirigete al directorio **lab06-SW** y ejecuta:
+    docker build -t blog-gustavocruz-db .
+Luego ejecuta el siguiente ejecuta:
+    docker run --name gustavo-db -e MYSQL_ROOT_PASSWORD=toor -e MYSQL_DATABASE=post_db -e MYSQL_USER=gustavo -e MYSQL_PASSWORD=gus -p 3306:3306 -d blog-gustavocruz-db
+Luego, para iniciar el contenedor utiliza:
+    docker start gustavo-db
+Una vez hayas ejecutado sin errores la imagen de docker, ejecuta:
+    npm start
+Si deseas ver los errores de estilo del codigo puedes usar:
+    npm run lint
+Por ultimo, si deseas ver la documentacion con **Swagger** primero ejecuta el codigo *npm start* y luego en el navegador coloca:
+    http://localhost:3000/api-docs/#/default/get_posts
+
+---
 ## :computer: Pruebas en postman :computer:
 - /GET
 ![imagen](https://github.com/G2309/lab06-SW/assets/106942151/e69b65ec-131d-420d-a477-2ad8df48f0f9)
