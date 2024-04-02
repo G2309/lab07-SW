@@ -6,6 +6,7 @@ function Blog() {
 	
 	const [selectedPost, setSelectedPost] = React.useState(null);
 
+
 	// Estilo del blog
 	const blogStyle = {
 		width: '100%',
@@ -27,12 +28,15 @@ function Blog() {
 		flexDirection: 'column',
 	};
 
+	const handleDelete = () => {};
+
 	return (
 		<div style={blogStyle}>
 		<BlogBar setSelectedPost={setSelectedPost} style={BarStyle}/>
 			<div style={ContentStyle}>	
 			<Header post={selectedPost}/>
 			<Body post={selectedPost}/>
+			<Nav onDelete={handleDelete} selectedPost={selectedPost}/>
 			</div>
 		</div>
 	);

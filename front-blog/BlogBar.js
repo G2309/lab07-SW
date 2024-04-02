@@ -34,6 +34,32 @@ function BlogBar({setSelectedPost}) {
 
 	}
 
+	// Style para button
+	
+	const ButtonStyle = {
+		width: '50px',
+		height: '50px',
+		borderRadius: '50%',
+		background: `url("./blog-default-image/button.png")`,
+		backgroundSize: 'cover',
+		border: 'none',
+		cursor: 'pointer',
+		marginLeft: '20px',
+	}
+
+	// Copie el style para un "clear button"
+	
+	const ClearButtonStyle = {
+		width: '50px',
+		height: '50px',
+		borderRadius: '50%',
+		background: `url("./blog-default-image/scape.png")`,
+		backgroundSize: 'cover',
+		border: 'none',
+		cursor: 'pointer',
+		marginLeft: '20px',
+	}
+
 	// Funcion para consumir la REST API del lab06
 	
 	const fetchPost = async() => {
@@ -50,16 +76,23 @@ function BlogBar({setSelectedPost}) {
 	
 	React.useEffect(() => { fetchPost();}, [blogs]);
 
+	// Mantiene en header.js y body.js el contenido seleccionado
 	const handlePost = (post) => {
 		setSelectedPost(post);
 	};
+	
+	// Regresa al empty state, no muestra ningun post
+	const handleClearPost = () => {
+		setSelectedPost(null);
+	}
 
 	return (
 		<div style={BlogBarStyles}>
 			{blogs.map(blog => (
 				<div key={blog.id} style={PostStyle} >
 					<h4>{blog.title}</h4>
-					<button onClick={() => handlePost(blog)}>View</button>
+					<button style={ButtonStyle} onClick={() => handlePost(blog)}></button>
+					<button style={ClearButtonStyle} onClick={handleClearPost}></button>
 				</div>
 			))}
 		</div>
