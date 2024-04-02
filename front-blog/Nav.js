@@ -1,4 +1,4 @@
-function Nav({ onDelete, onSave, selectedPost }) {
+function Nav({ onDelete, onSave, onNewPost, selectedPost }) {
 	const [isEditing, setIsEditing] = React.useState(false);
     	const [inputValue, setInputValue] = React.useState('');
 
@@ -56,20 +56,22 @@ function Nav({ onDelete, onSave, selectedPost }) {
         	setInputValue(event.target.value);
     	};
 
-    	return (
-        	<div style={NavStyle}>
-            	<button style={ButtonStyle} onClick={handleDeleteClick}>Delete</button>
-            	<button style={ButtonStyle} onClick={handleSaveClick}>Save</button>
-            	<button style={ButtonStyle} onClick={handleEditClick}>Edit</button>
-           	 {isEditing && (
-                	<input
-                    	type="text"
-                    	style={inputStyle}
-                    	value={inputValue}
-                    	onChange={handleInputChange}
-                    	placeholder="Enter data..."
-                	/>
-            	)}
-        	</div>
-    	);
+	return (
+        <div style={NavStyle}>
+            <button style={ButtonStyle} onClick={handleDeleteClick}>Delete</button>
+            <button style={ButtonStyle} onClick={handleSaveClick}>Save</button>
+            <button style={ButtonStyle} onClick={handleEditClick}>Edit</button>
+            <button style={ButtonStyle} onClick={onNewPost}>New Post</button> {/* Botón para activar el modo de nuevo post */}
+            {isEditing && (
+                <input
+                    type="text"
+                    style={inputStyle}
+                    value={inputValue}
+                    onChange={handleInputChange}
+                    placeholder="Enter data..."
+                />
+            )}
+        </div>
+    );
+
 }

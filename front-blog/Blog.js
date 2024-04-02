@@ -6,6 +6,7 @@ function Blog() {
 	
 	const [selectedPost, setSelectedPost] = React.useState(null);
 
+	const [isNewPostMode, setIsNewPostMode] = React.useState(false);
 
 	// Estilo del blog
 	const blogStyle = {
@@ -30,13 +31,22 @@ function Blog() {
 
 	const handleDelete = () => {};
 
+	const handleNewPost = () => {
+		setSelectedPost(null);
+		setIsNewPostMode(true);
+	};
+
+	const handleSavePost = () => {
+		setIsNewPostMode(false);
+	};
+
 	return (
 		<div style={blogStyle}>
 		<BlogBar setSelectedPost={setSelectedPost} style={BarStyle}/>
 			<div style={ContentStyle}>	
 			<Header post={selectedPost}/>
-			<Body post={selectedPost}/>
-			<Nav onDelete={handleDelete} selectedPost={selectedPost}/>
+			<Body post={selectedPost} isNewPostMode={isNewPostMode} onSavePost={handleSavePost}/>
+			<Nav onDelete={handleDelete} onSave={handleSavePost} selectedPost={selectedPost} onNewPost={handleNewPost}/>
 			</div>
 		</div>
 	);
