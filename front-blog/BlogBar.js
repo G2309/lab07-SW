@@ -1,4 +1,5 @@
-function BlogBar() {
+
+function BlogBar({setSelectedPost}) {
 
 	const [blogs, setBlogs] = React.useState([]);
 
@@ -36,24 +37,29 @@ function BlogBar() {
 	// Funcion para consumir la REST API del lab06
 	
 	const fetchPost = async() => {
-		try {
-			const response = await fetch('http://localhost:3000/posts', {
-				method: 'GET',
-			});
+		const response = await fetch('http://localhost:3000/posts', {
+			method: 'GET',
+		});
+		if(response.ok) {
 			const data = await response.json();
 			setBlogs(data);
-		} catch (error) { 
-			console.error('Error al obtener post del blog', error);
+		} else {
+			throw new Error('Error al obtener post del blog');
 		}
 	};
 	
 	React.useEffect(() => { fetchPost();}, [blogs]);
 
+	const handlePost = (post) => {
+		setSelectedPost(post);
+	};
+
 	return (
 		<div style={BlogBarStyles}>
 			{blogs.map(blog => (
-				<div key={blog.id} style={PostStyle}>
+				<div key={blog.id} style={PostStyle} >
 					<h4>{blog.title}</h4>
+					<button onClick={() => handlePost(blog)}>View</button>
 				</div>
 			))}
 		</div>

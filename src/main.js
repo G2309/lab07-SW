@@ -32,18 +32,6 @@ app.use((err, req, res, next) => {
   }
 })
 
-// Middleware para escribir los logs en un archivo log.txt
-app.use((req, res, next) => {
-  const timestamp = new Date().toISOString()
-  const logMessage = `${timestamp} - Método: ${req.method}, URL: ${req.originalUrl}, Payload: ${JSON.stringify(req.body)}\n`
-  fs.appendFile('log.txt', logMessage, (err) => {
-    if (err) {
-      console.error('Error al escribir en el archivo de log:', err)
-    }
-  })
-  next()
-})
-
 /**
  * @swagger
  * /posts:

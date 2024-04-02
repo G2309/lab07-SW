@@ -3,6 +3,9 @@
 //
 
 function Blog() {
+	
+	const [selectedPost, setSelectedPost] = React.useState(null);
+
 	// Estilo del blog
 	const blogStyle = {
 		width: '100%',
@@ -26,10 +29,10 @@ function Blog() {
 
 	return (
 		<div style={blogStyle}>
-		<BlogBar style={BarStyle} />
-			<div style={ContentStyle}>			
-			<Header/>
-			<Body/>
+		<BlogBar setSelectedPost={setSelectedPost} style={BarStyle}/>
+			<div style={ContentStyle}>	
+			<Header post={selectedPost}/>
+			<Body post={selectedPost}/>
 			</div>
 		</div>
 	);
