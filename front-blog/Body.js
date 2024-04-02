@@ -49,23 +49,55 @@ function Body({post, isNewPostMode, onSavePost}) {
 		color: 'white',
 	};
 
+	const inputContainer = {
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		alignItems: 'center',
+		width: '100%'
+	};
+
+	const inputStyle = {
+		fontSize: '16px',
+		marginRight: '20px',
+		border: '1px solid white',
+		backgroundColor: '#2135ae',
+		borderRadius: '5px',
+		color: 'white',
+		marginTop: '7%',
+		marginBottom: '10px',
+		width: '50%'
+	}
+
+	const ButtonStyle = {
+		width: '50px',
+		height: '25px',
+		backgroundColor: '#352c7d',
+		borderRadius: '10px',
+		color: 'white',
+	}
+
 	 return (
 		 <div style={contentStyle}>
             	{isNewPostMode ? (
-                	<div>
-                    	<input type="text" value={newPost.title} onChange={handleTitleChange} placeholder="Enter title" />
-                    	<input type="text" value={newPost.demon} onChange={handleDemonChange} placeholder="Enter demon" />
-                    	<input type="text" value={newPost.content} onChange={handleContentChange} placeholder="Enter content" />
-                    	<input type="number" value={newPost.level} onChange={handleLevelChange} placeholder="Enter level" />
-                    	<button onClick={handleSaveClick}>Save</button>
+                	<div style={inputContainer}>
+                    	<input type="text" value={newPost.title} onChange={handleTitleChange} placeholder="Enter title" style={inputStyle} />
+                    	<input type="text" value={newPost.demon} onChange={handleDemonChange} placeholder="Enter demon" style={inputStyle}/>
+                    	<input type="text" value={newPost.content} onChange={handleContentChange} placeholder="Enter content" style={inputStyle}/>
+                    	<input type="number" value={newPost.level} onChange={handleLevelChange} placeholder="Enter level" style={inputStyle}/>
+                    	<button style={ButtonStyle} onClick={handleSaveClick}>Save</button>
                 	</div>
             	) : (
-                	<div>
-                    	{post ? (
+			<div>
+			{post ? (
                         	<div>
-                            	<h3>Demon: {post.demon}</h3>
-                            	<h3>Level: {post.level}</h3>
-                            	<p>Content: {post.content}</p>
+                            		<div style={{backgroundColor: '#2135ae', padding: '10px', marginBottom: '10px', width:'100%'}}>
+                                		<h3 style={{color: 'white', marginBottom: '5px',width:'100%'}}>Demon: {post.demon}</h3>
+                                		<h3 style={{color: 'white'}}>Level: {post.level}</h3>
+                            		</div>
+                            		<div style={{backgroundColor: '#182b7e', padding: '10px',width:'100%'}}>
+                                		<p style={{color: 'white'}}>Content: {post.content}</p>
+                            		</div>
                         	</div>
                     	) : (
                         	<img src='./blog-default-image/nopost.gif' style={{maxWidth: '100%', maxHeight: '70%', marginTop: '20%'}}/>

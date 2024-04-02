@@ -11,7 +11,7 @@ function Nav({ onDelete, onSave, onNewPost, selectedPost }) {
     	const ButtonStyle = {
        		backgroundColor: '#352c7d',
         	color: 'white',
-        	width: '50px',
+        	width: '150px',
         	height: '30px',
         	borderRadius: '35px',
         	marginLeft: '20px',
@@ -57,21 +57,19 @@ function Nav({ onDelete, onSave, onNewPost, selectedPost }) {
     	};
 
 	return (
-        <div style={NavStyle}>
-            <button style={ButtonStyle} onClick={handleDeleteClick}>Delete</button>
-            <button style={ButtonStyle} onClick={handleSaveClick}>Save</button>
-            <button style={ButtonStyle} onClick={handleEditClick}>Edit</button>
-            <button style={ButtonStyle} onClick={onNewPost}>New Post</button> {/* Botón para activar el modo de nuevo post */}
-            {isEditing && (
-                <input
-                    type="text"
-                    style={inputStyle}
-                    value={inputValue}
-                    onChange={handleInputChange}
-                    placeholder="Enter data..."
-                />
-            )}
-        </div>
-    );
-
+		<div style={NavStyle}>
+            		<button style={ButtonStyle} onClick={handleDeleteClick}>Delete</button>
+            		<button style={ButtonStyle} onClick={onNewPost}>New Post</button>            
+            		<button style={ButtonStyle} onClick={handleEditClick}>Edit</button>
+		{isEditing && (
+                	<input
+                    	type="text"
+                    	style={inputStyle}
+                    	value={inputValue}
+                    	onChange={handleInputChange}
+                    	placeholder="Enter data..."
+                	/>
+            	)}
+        	</div>
+    	);
 }
